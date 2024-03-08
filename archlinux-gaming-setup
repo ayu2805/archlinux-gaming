@@ -13,7 +13,7 @@ fi
 echo ""
 read -r -p "Do you want to install Mangohud? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo pacman -S mangohud gamescope glfw libxnvctrl
+    sudo pacman -S mangohud --asdeps gamescope glfw libxnvctrl
 fi
 
 echo ""
