@@ -5,8 +5,8 @@ sudo cp pacman.conf /etc/
 echo ""
 read -r -p "Do you want to install Lutris+Wine(+winetricks)? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo pacman -S lutris $(pacman -Si lutris | sed -n '/^Optional Deps/,/^Conflicts With/p' | sed '$d' | sed 's/^Optional Deps   ://g' | sed 's/^\s*//g' | tr '\n' ' ')
-    sudo pacman -S wine winetricks $(pacman -Si wine | sed -n '/^Optional Deps/,/^Conflicts With/p' | sed '$d' | sed 's/^Optional Deps   ://g' | sed 's/^\s*//g' | tr '\n' ' ')
+    sudo pacman -S lutris $(pacman -Si lutris | sed -n '/^Optional Deps/,/^Conflicts With/p' | sed '$d' | sed 's/^Optional Deps  ://g' | sed 's/^\s*//g')
+    sudo pacman -S wine winetricks $(pacman -Si wine | sed -n '/^Optional Deps/,/^Conflicts With/p' | sed '$d' | sed 's/^Optional Deps  ://g' | sed 's/^\s*//g')
     sudo systemctl restart systemd-binfmt
 fi
 
