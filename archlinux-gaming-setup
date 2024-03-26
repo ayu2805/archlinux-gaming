@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo cp pacman.conf /etc/
+sudo pacman -Syu
 
 echo ""
 read -r -p "Do you want to install Lutris+Wine(+winetricks)? [y/N] " response
