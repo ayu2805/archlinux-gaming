@@ -4,9 +4,14 @@ sudo cp pacman.conf /etc/
 sudo pacman -Syu
 
 echo ""
-read -r -p "Do you want to install Lutris+Wine(+winetricks)? [y/N] " response
+read -r -p "Do you want to install Lutris(Without Wine)? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo pacman -S --needed --noconfirm lutris --asdeps gamemode gvfs innoextract lib32-gamemode lib32-vkd3d lib32-vulkan-icd-loader python-protobuf vkd3d vulkan-icd-loader vulkan-tools xorg-xgamma
+fi
+
+echo ""
+read -r -p "Do you want to install Wine(+winetricks)? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo pacman -S --needed --noconfirm wine winetricks $(pacman -Si wine | sed -n '/^Optional Deps/,/^Conflicts With/p' | sed '$d' | sed 's/^Optional Deps   ://g' | sed 's/^\s*//g')
     sudo systemctl restart systemd-binfmt
     wine reg.exe add HKCU\\Software\\Wine\\Drivers /v Graphics /d x11,wayland
