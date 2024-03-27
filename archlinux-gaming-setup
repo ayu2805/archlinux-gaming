@@ -6,7 +6,7 @@ sudo pacman -Syu
 echo ""
 read -r -p "Do you want to install Lutris(Without Wine)? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo pacman -S --needed --noconfirm lutris --asdeps gamemode gvfs innoextract lib32-gamemode lib32-vkd3d lib32-vulkan-icd-loader python-protobuf vkd3d vulkan-icd-loader vulkan-tools xorg-xgamma
+    sudo pacman -S --needed --noconfirm lutris gamemode gvfs innoextract lib32-gamemode lib32-vkd3d lib32-vulkan-icd-loader python-protobuf vkd3d vulkan-icd-loader vulkan-tools xorg-xgamma
 fi
 
 echo ""
@@ -20,7 +20,7 @@ fi
 echo ""
 read -r -p "Do you want to install Mangohud? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo pacman -S --needed --noconfirm mangohud lib32-mangohud --asdeps gamescope glfw
+    sudo pacman -S --needed --noconfirm mangohud lib32-mangohud gamescope glfw
 fi
 
 echo ""
