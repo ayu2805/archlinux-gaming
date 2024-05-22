@@ -1,6 +1,6 @@
 # Linux Gaming 
 
-Script to install necessary packages for gaming in archlinux
+Script to install necessary packages for gaming in linux
 
 ### For ArchLinux:
 Clone this repo and run the script in terminal, you can do this by the following code:
