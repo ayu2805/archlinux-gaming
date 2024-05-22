@@ -1,27 +1,6 @@
 #!/bin/bash
 
 echo ""
-read -r -p "Do you want to install Lutris(Without Wine)? [y/N] " response
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    echo "deb [signed-by=/etc/apt/keyrings/lutris.gpg] https://download.opensuse.org/repositories/home:/strycore/Debian_12/ ./" | sudo tee /etc/apt/sources.list.d/lutris.list > /dev/null
-    wget -q -O- https://download.opensuse.org/repositories/home:/strycore/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/keyrings/lutris.gpg > /dev/null
-    sudo apt update
-    sudo apt upgrade
-    sudo apt install -y lutris
-fi
-
-echo ""
-read -r -p "Do you want to install Wine(Development)? [y/N] " response
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo dpkg --add-architecture i386
-    sudo wget -qO /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-    sudo wget -qNP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources
-    sudo apt update
-    sudo apt upgrade
-    sudo apt install -y winehq-devel
-fi
-
-echo ""
 read -r -p "Do you want to install Steam? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo dpkg --add-architecture i386
