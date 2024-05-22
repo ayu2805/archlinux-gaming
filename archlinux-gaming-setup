@@ -23,7 +23,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     Terminal=false
     Categories=Game;Application;
     StartupWMClass=minecraft-launcher
-    EOF
+    'EOF'
 fi
 
 echo ""
