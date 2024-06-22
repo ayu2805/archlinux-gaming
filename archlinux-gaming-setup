@@ -6,7 +6,7 @@ sudo pacman -Syu
 echo ""
 read -r -p "Do you want to install Minecraft Launcher? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    sudo pacman -S --needed --noconfirm jre-openjdk
+    sudo pacman -S --needed --noconfirm jdk-openjdk
     wget -q -nc --show-progress https://launcher.mojang.com/download/Minecraft.tar.gz
     tar -xf Minecraft.tar.gz
     sudo cp minecraft-launcher/minecraft-launcher /usr/bin/
