@@ -8,7 +8,7 @@ read -r -p "Do you want to install Minecraft Launcher? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo pacman -S --needed --noconfirm jdk-openjdk
     wget -q -nc --show-progress https://launcher.mojang.com/download/Minecraft.tar.gz
-    tar -xf Minecraft.tar.gz
+    tar -zxf Minecraft.tar.gz
     sudo cp minecraft-launcher/minecraft-launcher /usr/bin/
     sudo wget -q -nc https://launcher.mojang.com/download/minecraft-launcher.svg -P /usr/share/icons/hicolor/symbolic/apps/
     echo -e "[Desktop Entry]\nType=Application\nVersion=1.0\nName=Minecraft Launcher\nComment=Official Minecraft Launcher\nExec=minecraft-launcher\nIcon=minecraft-launcher\nTerminal=false\nCategories=Game;Application;\nStartupWMClass=minecraft-launcher" | sudo tee /usr/share/applications/minecraft-launcher.desktop > /dev/null
